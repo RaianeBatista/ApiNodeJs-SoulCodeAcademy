@@ -1,5 +1,5 @@
 import { getFirestore } from "firebase-admin/firestore";
-import app from "../firebase/app";
+import app from "../firebase/app.js";
 
 const db = getFirestore(app);
 
@@ -40,15 +40,13 @@ async function remove(id) {
   const docRef = db.collection("usuarios").doc(id);
   const doc = await docRef.get();
 
-  if (!doc.exists) 
-    return false;
-  
-  await docRef.delete()
-  return true
+  if (!doc.exists) return false;
+
+  await docRef.delete();
+  return true;
 }
 
-export { findAll, findById, save, remove };
-
+export { findAll, findById, save,update, remove };
 
 // solução alternativa
 // async function remove(id) {

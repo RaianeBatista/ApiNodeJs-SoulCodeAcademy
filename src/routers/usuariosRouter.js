@@ -4,8 +4,8 @@ import {
   findById,
   remove,
   save,
-  update,
-} from "../services/produtosService.js";
+  update
+} from "../services/usuariosService.js";
 
 const usuariosRouter = express.Router();
 
